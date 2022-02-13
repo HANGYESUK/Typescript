@@ -122,3 +122,53 @@ let main  = (a :string, b :mainType1, c :mainType2)=>{
 }
 
 main("010-1234-5678", cutZero, removeDash)
+
+
+
+// 타입스크립트로 html조작 하는 법
+let title = document.querySelector('#title')
+
+// Type Narrowing 써서 사용
+if(title != null) {
+    title.innerHTML = '반가워요'
+}
+// instanceof 사용 - (오브젝트 instanceof 클래스) 오브젝트가 오른쪽 클래스의 자식이면 true 아니면 false 리턴
+if(title instanceof Element) {
+    title.innerHTML = '반가워요'
+}
+// as 로 속이기 - 웬만하면 쓰면 안됨
+title = document.querySelector('#title') as Element
+title.innerHTML = '반가워요'
+
+// 물음표 문법 - (변수?.innerHTML) 변수에 innerHTML이 있으면 출력해주고 없으면 undifined 리턴
+if(title?.innerHTML != undefined) {
+    title.innerHTML = '반가워요'
+}
+
+let link = document.querySelector('.link')
+if(link instanceof HTMLAnchorElement) {
+    link.href = 'https://kakao.com'
+}
+
+let btn = document.querySelector('#button')
+
+btn?.addEventListener('click', ()=>{
+
+})
+
+// 숙제1
+let img = document.querySelector("#image")
+
+if(img instanceof HTMLImageElement) {
+    img.src = 'new.jpg'
+}
+
+// 숙제2
+//let link2 = document.querySelectorAll(".naver") 
+let link2 = document.getElementsByClassName(".naver") //벼
+
+
+    if(link2 instanceof HTMLAnchorElement) {
+        link2.href = 'https://kakao.com'
+    } 
+
