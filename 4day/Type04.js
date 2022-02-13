@@ -88,8 +88,10 @@ if (img instanceof HTMLImageElement) {
     img.src = 'new.jpg';
 }
 // 숙제2
-//let link2 = document.querySelectorAll(".naver") 
-var link2 = document.getElementsByClassName(".naver"); //벼
-if (link2 instanceof HTMLAnchorElement) {
-    link2.href = 'https://kakao.com';
-}
+var link2 = document.querySelectorAll(".naver"); //querySelectorAll(클래스) - 클래스명인 모든 객체 가져옴
+// 가져온게 여러개라 forEach문이나 for문 써서 활용
+link2.forEach(function (a) {
+    if (a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com';
+    }
+});

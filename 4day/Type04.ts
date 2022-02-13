@@ -164,11 +164,11 @@ if(img instanceof HTMLImageElement) {
 }
 
 // 숙제2
-//let link2 = document.querySelectorAll(".naver") 
-let link2 = document.getElementsByClassName(".naver") //벼
+let link2 = document.querySelectorAll(".naver") //querySelectorAll(클래스) - 클래스명인 모든 객체 가져옴
 
-
-    if(link2 instanceof HTMLAnchorElement) {
-        link2.href = 'https://kakao.com'
+// 가져온게 여러개라 forEach문이나 for문 써서 활용
+link2.forEach((a)=>{
+    if(a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com'
     } 
-
+})
