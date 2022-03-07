@@ -7,5 +7,3 @@ function Func(x) {
     return x[0];
 }
 console.log(Func([4, 2]));
-
-
