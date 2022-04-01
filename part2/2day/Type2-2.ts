@@ -73,3 +73,4 @@ class Method2 {
 Method2.addOne(3)
 Method2.addOne(4)
 Method2.printx()
+
