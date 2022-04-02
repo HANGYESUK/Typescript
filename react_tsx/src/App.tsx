@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  //보통은 자동으로 타입지정 해줌
+  let [user, setUser] = useState([]);
 
   let box :JSX.IntrinsicElements['div']= <div>안녕 세상</div>;
 
