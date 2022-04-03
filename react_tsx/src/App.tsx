@@ -1,19 +1,28 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { Dispatch } from 'redux';
 
 function App() {
 
   //보통은 자동으로 타입지정 해줌
   let [user, setUser] = useState([]);
 
+  const state = useSelector((state: {count: number}) => state)
+
+  const dispatch :Dispatch = useDispatch();
+
   let box :JSX.IntrinsicElements['div']= <div>안녕 세상</div>;
+  console.log(state)
 
   return (
     <div className="App">
       <h1>Hello World!</h1>
       { box }
       <Profile name ="Kim" age={25}></Profile>
+      {state.count}
+      <button onClick={()=>{dispatch({ type: '증가' })}}>버튼</button>
     </div>
   );
 }
